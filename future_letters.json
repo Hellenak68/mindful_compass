@@ -1,0 +1,34 @@
+{
+  "letters": [
+    {
+      "id": "281ab1fe-ac2b-4142-ba39-91320b5e6125",
+      "title": "",
+      "content": "안녕, 미래의 나!!!\n오늘도 미래의 내가 함께 했음을 믿어. \n3개월 후 나의 모습과 꼭 비교해볼게",
+      "write_date": "2025-09-06",
+      "delivery_date": "2025-12-05",
+      "is_read": false,
+      "read_date": null,
+      "write_time": "2025-09-06 16:19:32"
+    },
+    {
+      "id": "892ec362-bc69-4be7-bbcf-b19ce426b274",
+      "title": "",
+      "content": "미래의 나",
+      "write_date": "2025-09-06",
+      "delivery_date": "2025-09-13",
+      "is_read": false,
+      "read_date": null,
+      "write_time": "2025-09-06 17:49:46"
+    },
+    {
+      "id": "3eeeecb5-1087-4435-8103-dfec3874cbce",
+      "title": "",
+      "content": "미래의 나",
+      "write_date": "2025-09-06",
+      "delivery_date": "2025-10-06",
+      "is_read": false,
+      "read_date": null,
+      "write_time": "2025-09-06 17:49:59"
+    }
+  ]
+}
