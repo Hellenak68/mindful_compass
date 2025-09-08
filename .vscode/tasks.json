@@ -1,23 +1,15 @@
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Git 자동 배포",
-            "type": "shell",
-            "command": "git",
-            "args": [
-                "add", ".",
-                "&&", "git", "commit", "-m", "자동 업데이트",
-                "&&", "git", "push"
-            ],
-            "group": "build",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
-            },
-            "problemMatcher": []
-        }
-    ]
-}
+{ 
+    "version": "2.0.0", 
+    "tasks": [ 
+        { 
+            "label": "Git ?�동 배포", 
+            "type": "shell", 
+            "command": "git add . && git commit -m \"?�동 ?�데?�트\" && git push", 
+            "group": "build", 
+            "presentation": { 
+                "echo": true, 
+                "reveal": "always" 
+            } 
+        } 
+    ] 
+} 

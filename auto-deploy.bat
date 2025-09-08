@@ -1,7 +1,7 @@
-@echo off
-echo 자동 Git 배포 시작...
-git add .
-git commit -m "자동 업데이트 %date% %time%"
-git push
-echo 배포 완료! 웹사이트가 곧 업데이트됩니다.
-pause
+@echo off 
+echo ?�동 Git 배포 ?�작... 
+git add . 
+git commit -m "?�동 ?�데?�트 %date% %time%" 
+git push 
+echo 배포 ?�료! ?�사?�트가 �??�데?�트?�니?? 
+pause 
