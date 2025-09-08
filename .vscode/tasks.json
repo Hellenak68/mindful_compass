@@ -2,9 +2,9 @@
     "version": "2.0.0", 
     "tasks": [ 
         { 
-            "label": "Git ?ë™ ë°°í¬", 
+            "label": "Git Auto Deploy", 
             "type": "shell", 
-            "command": "git add . && git commit -m \"?ë™ ?…ë°?´íŠ¸\" && git push", 
+            "command": "git add . && git commit -m 'Auto update' && git push", 
             "group": "build", 
             "presentation": { 
                 "echo": true, 
