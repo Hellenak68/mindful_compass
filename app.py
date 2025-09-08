@@ -1,4 +1,10 @@
 # app.py - 마음의 나침반 완전 수정 버전
+# ------------------------------------------
+# 마음의 나침반: Streamlit 단일 앱 엔트리
+# - 세션 상태 기반 라우팅(`current_page`)
+# - 주요 페이지: 메인 / 감정 탐색 / 감정 달력 / 미래 편지
+# - 데이터는 로컬 JSON/TXT 파일로 저장/로드
+# ------------------------------------------
 
 import streamlit as st
 import json
@@ -372,6 +378,7 @@ def run_emotion_chat():
     emotion_name = "무기력" if emotion == "lethargy" else "불안"
     st.subheader(f"💭 {emotion_name} 감정 탐색")
     
+    # 단계 1: 은유적 단어 입력 받기 → 사용자 입력 후 2단계로 진행
     if step == 1:
         st.write("마음이 힘드시는군요. 조금 더 자세히 이야기해볼까요?")
         st.write("지금 느끼시는 감정을 한 단어로 표현한다면 어떤 것일까요?")
@@ -383,6 +390,7 @@ def run_emotion_chat():
             st.session_state.chat_step = 2
             st.rerun()
     
+    # 단계 2: 감정이 시작된 맥락/시점 서술 받기 → 3단계로 진행
     elif step == 2:
         word = st.session_state.user_word
         st.write(f"'{word}' 같은 감정이시는군요.")
@@ -395,6 +403,7 @@ def run_emotion_chat():
             st.session_state.chat_step = 3
             st.rerun()
     
+    # 단계 3: 통찰, 추천, 기록(완료 후 홈 이동)
     elif step == 3:
         st.write("🌟 통찰의 시간")
         provide_insight()
@@ -480,6 +489,7 @@ def recommend_content():
     
     try:
         contents = load_contents()
+        # 데이터 파일이 없거나 해당 감정 키가 없으면 안전한 기본 추천 사용
         if not contents or emotion not in contents:
             contents = default_contents
     except:
@@ -790,7 +800,7 @@ def calculate_streak(calendar_data):
     dates = sorted(calendar_data.keys(), reverse=True)
     streak = 0
     current_date = date.today()
-    
+    # 최신 날짜부터 하루씩 이어지는지 확인하며 연속 기록 수(streak)를 계산
     for date_str in dates:
         record_date = datetime.strptime(date_str, "%Y-%m-%d").date()
         
